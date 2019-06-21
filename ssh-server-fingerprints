@@ -1,0 +1,32 @@
+#!/bin/bash
+# Function to get SSH server fingerprints
+# made by: LordShedy
+
+if [[ "$#" -gt 1 ]]; then
+  echo "Illegal number of parameters, please enter SINGLE domain"
+  exit 0
+fi
+
+if [[ "$#" -ne 1 ]]; then
+  echo "Domain or IP address needed!"
+  exit 0
+fi
+
+if [[ "$1" == "-h" ]] && [[ "$1" == "--help" ]]; then
+  printf "Program to output all keys of the server using ssh-keyscan.\nUsage: `basename $0` [address]\n"
+  exit 0
+fi
+
+if [[ "$1" =~ ^(([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9\-]*[a-zA-Z0-9])\.)*([A-Za-z0-9]|[A-Za-z0-9][A-Za-z0-9\-]*[A-Za-z0-9])$ ]]; then
+  RES=`ssh-keygen -lf <(ssh-keyscan $1 2>/dev/null) 2>/dev/null`
+  if [[ "$?" -ne 0 ]]
+  then
+    echo "Something went wrong, the server seems not to be running SSHD."
+    exit 0
+  else
+    echo "$RES"
+  fi
+else
+  echo "You have entered IP/domain that is not valid!"
+  exit 0
+fi
