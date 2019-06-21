@@ -7,4 +7,6 @@ RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.
 Are you sure you want to continue connecting (yes/no)?
 ```
 
-To confirm that our SSH connection was not tempered with, we **should** check the servers fingerprint and compare it with the one we are trying to connect to. This simple script is designed to do this using *ssh-keygen* and *ssh-keyscan* binaries.  
+To confirm that our SSH connection was not tempered with, we **should** check the servers fingerprint and compare it with the one we are trying to connect to. 
+
+This simple script is built using *ssh-keygen* and *ssh-keyscan* binaries.
