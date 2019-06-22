@@ -41,3 +41,6 @@ As a result you will get all the fingerprints that the server offers.
 
 ## Limitations
 This approach makes connecting for the first time to a SSH server more secure because you check the fingerprint before connecting and you may even ask the server admin if the fingerprint is correct one without connecting to some different server that you may have been fooled by.
+
+## Future of the script
+I know this is just a simple script but everything can be improved. I am thinking making it able to check multiple servers at once.
