@@ -29,3 +29,15 @@ If you know your way around GNU/Linux, you can just download the script and go. 
      `sudo ./install.sh /bin/local/orsomeotherdirectory`
 
 That's all. Now you may use the program every time when connecting to the unknown SSH server for the first time. 
+
+## Usage
+Imagine you are connecting to a server with IP of 10.0.1.204, you want to know its SSH fingerprint before you connect so you can be sure that the fingerprint when establishing connection is correct.
+
+```bash
+ssh-server-fingerprint 10.0.1.204
+```
+
+As a result you will get all the fingerprints that the server offers.
+
+## Limitations
+This approach makes connecting for the first time to a SSH server more secure because you check the fingerprint before connecting and you may even ask the server admin if the fingerprint is correct one without connecting to some different server that you may have been fooled by.
