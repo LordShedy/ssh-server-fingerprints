@@ -12,7 +12,7 @@ if [[ "$#" -ne 1 ]]; then
   exit 0
 fi
 
-if [[ "$1" == "-h" ]] && [[ "$1" == "--help" ]]; then
+if [[ "$1" == "-h" ]] || [[ "$1" == "--help" ]]; then
   printf "Program to output all keys of the server using ssh-keyscan.\nUsage: `basename $0` [address]\n"
   exit 0
 fi
