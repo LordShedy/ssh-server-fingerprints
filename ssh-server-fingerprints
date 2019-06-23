@@ -3,16 +3,17 @@
 # made by: LordShedy
 
 if [[ "$#" -gt 1 ]]; then
-  echo "Illegal number of parameters, please enter SINGLE domain"
+  echo "An illegal number of parameters, please, enter a SINGLE domain."
   exit 0
 fi
 
 if [[ "$#" -ne 1 ]]; then
-  echo "Domain or IP address needed!"
+  echo "A domain or an IP address needed!"
   exit 0
 fi
 
-if [[ "$1" == "-h" ]] || [[ "$1" == "--help" ]]; then
+
+if [[ "$1" =~ -{1,2}h(elp)? ]]; then
   printf "Program to output all keys of the server using ssh-keyscan.\nUsage: `basename $0` [address]\n"
   exit 0
 fi
